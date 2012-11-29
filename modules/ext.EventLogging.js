@@ -168,6 +168,10 @@
 			return dfd.promise();
 		}
 
+		if ( /\?/.test( baseUri ) === false ) {
+			baseUri = baseUri + '?';
+		}
+
 		// Browsers uniformly fire the onerror event upon receiving HTTP 204
 		// ("No Content") responses to image requests. Thus, although
 		// counterintuitive, resolving the promise on error is appropriate.
